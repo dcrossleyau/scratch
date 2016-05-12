@@ -17,3 +17,12 @@ Using html img width="100%" to place the image in the centre:
 Using Markdown link syntax:
 
 ![test SVG](https://cdn.rawgit.com/dcrossleyau/scratch/master/test-svg-1/test-1.svg "the test SVG")
+
+Using relative source:
+
+![test SVG](test-1.svg "the test SVG")
+
+<img src="test-1.svg" alt="test SVG">
+
+Using PNG:
+![test PNG](test-1.png "the test PNG")
