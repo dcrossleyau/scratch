@@ -2,13 +2,15 @@
 
 Temporary.
 
-[one](#section-one) and
-[two](#section-two) and
-[three](#s-3) and
-[four](#s-4) and
-[five](#s-5) and
-[six](#s-6) and
-[seven](#s-7)
+[one](#section-one) |
+[two](#section-two) |
+[three](#s-3) |
+[four](#s-4) |
+[five](#s-5) |
+[six](#s-6) |
+[seven](#s-7) |
+[eight](#s-8) |
+[eight-1](#section-eight) |
 
 <br/>
 <br/>
@@ -86,6 +88,9 @@ Temporary.
 
 Temporary.
 
+## <a id="s-8"></a>Section eight
+
+Temporary.
 
 <br/>
 <br/>
