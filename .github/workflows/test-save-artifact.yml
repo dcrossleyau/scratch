@@ -30,8 +30,12 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: test-save-artifact
+        path: download-dir
+    - name: List downloaded files
+      run: ls -R
+      working-directory: download-dir
     - name: Display output for job_1
       shell: bash
       run: |
-        value=`cat test-save-artifact/output.txt`
+        value=`cat download-dir/output.txt`
         echo "Result: ${value}"
