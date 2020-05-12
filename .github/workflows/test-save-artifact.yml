@@ -1,0 +1,37 @@
+name: test-save-artifact
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+
+jobs:
+  job_1:
+    name: Extract and upload
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Extract repo names
+      uses: awesome-global-contributions/action-yq@v1.0.2
+      with:
+        file: wf/src/extract-repo-names.sh > output.txt
+    - name: Upload output for job_1
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-save-artifact
+        path: output.txt
+
+  job_2:
+    name: Display the result
+    needs: job_1
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download output for job_1
+      uses: actions/download-artifact@v2
+      with:
+        name: test-save-artifact
+    - name: Display output for job_1
+      shell: bash
+      run: |
+        value=`cat test-save-artifact/output.txt`
+        echo "Result: ${value}"
