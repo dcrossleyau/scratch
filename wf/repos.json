@@ -1,0 +1,15 @@
+{
+  "metadata": {
+    "generatedDateTime": "2020-05-11T01:20:24.915909+00:00"
+  },
+  "repos": [
+    {
+      "name": "repo-1",
+      "description": "This and that"
+    },
+    {
+      "name": "repo-2",
+      "description": "That and this"
+    }
+  ]
+}
