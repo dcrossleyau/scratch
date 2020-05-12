@@ -14,7 +14,8 @@ jobs:
     - name: Extract repo names
       uses: awesome-global-contributions/action-yq@v1.0.2
       with:
-        file: wf/src/extract-repo-names.sh > output.txt
+        file: wf/src/extract-repo-names.sh
+        path: output.txt
     - name: Upload output for job_1
       uses: actions/upload-artifact@v2
       with:
