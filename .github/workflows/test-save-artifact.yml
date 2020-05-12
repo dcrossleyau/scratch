@@ -1,8 +1,11 @@
 name: test-save-artifact
 
 on:
+# 2020-05-12: disabled
+#  push:
+#    branches: [ initial-gh-workflow ]
   push:
-    branches: [ initial-gh-workflow ]
+    branches: [ workflows-okay ]
 
 jobs:
   job_1:
