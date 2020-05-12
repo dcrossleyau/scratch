@@ -1,0 +1,17 @@
+name: test-jq-yq
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Extract repo names
+      uses: awesome-global-contributions/action-yq@v1.0.2
+      with:
+        file: wf/src/extract-repo-names.sh
