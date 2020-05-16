@@ -1,4 +1,4 @@
-name: test-jq-yq
+name: test-python
 
 on:
   push:
@@ -18,4 +18,4 @@ jobs:
         architecture: 'x64'
 
     - name: Report python version
-      run: python wf/src/hello.py
+      run: python wf/src/hello.py -l debug
