@@ -3,6 +3,7 @@
 import argparse
 import logging
 import os
+import pprint
 import sys
 
 import requests
@@ -57,7 +58,8 @@ def main():
             logger.critical("Trouble parsing YAML configuration file '%s': %s", CONFIG_FILE, err)
             return 2
         else:
-            logger.debug("Successfully retreived configuration.")
+            logger.debug("Successfully retrieved configuration.")
+            pprint.pprint(config['mod-notes'])
 
 if __name__ == "__main__":
     sys.exit(main())
