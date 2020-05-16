@@ -1,8 +1,11 @@
 name: test-python-pip
 
 on:
+# 2020-05-16: disabled
+#  push:
+#    branches: [ initial-gh-workflow ]
   push:
-    branches: [ initial-gh-workflow ]
+    branches: [ workflows-okay ]
 
 jobs:
   test:
