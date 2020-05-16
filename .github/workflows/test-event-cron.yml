@@ -1,9 +1,12 @@
 name: test-event-cron
 
 on:
-  schedule:
-    - cron:  '35 12 * * *'
-    - cron:  '35 01 * * *'
+# 2020-05-16: disabled
+#  schedule:
+#    - cron:  '35 12 * * *'
+#    - cron:  '35 01 * * *'
+  push:
+    branches: [ workflows-okay ]
 
 jobs:
   build:
