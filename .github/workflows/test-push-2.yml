@@ -2,8 +2,8 @@ name: test-push-2
 
 on:
   schedule:
-    - cron:  '45 12 * * *'
-    - cron:  '45 01 * * *'
+    - cron:  '56 12 * * *'
+    - cron:  '56 01 * * *'
 
 jobs:
   job_1:
@@ -13,7 +13,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        refs: gh-workflow-commit
+        ref: gh-workflow-commit
     - name: Edit the file
       run: |
         date > wf/date.txt
