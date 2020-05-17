@@ -1,8 +1,11 @@
 name: test-push-1
 
 on:
+# 2020-05-16: disabled
+#  push:
+#    branches: [ gh-workflow-commit ]
   push:
-    branches: [ gh-workflow-commit ]
+    branches: [ workflows-okay ]
 
 jobs:
   job_1:
