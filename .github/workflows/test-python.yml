@@ -1,0 +1,24 @@
+name: test-python
+
+on:
+# 2020-05-16: disabled
+#  push:
+#    branches: [ initial-gh-workflow ]
+  push:
+    branches: [ workflows-okay ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+
+    - name: Report python version
+      run: python wf/src/hello.py -l debug
