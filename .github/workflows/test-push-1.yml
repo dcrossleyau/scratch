@@ -13,4 +13,9 @@ jobs:
     - name: Edit the file
       run: |
         date > wf/date.txt
-        git status
+    - name: Commit and push
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Test auto-commit
+        file_pattern: wf/date.txt
+
