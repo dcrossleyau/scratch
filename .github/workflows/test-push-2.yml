@@ -2,8 +2,8 @@ name: test-push-2
 
 on:
   schedule:
-    - cron:  '56 12 * * *'
-    - cron:  '56 01 * * *'
+    - cron:  '02 13 * * *'
+    - cron:  '02 01 * * *'
 
 jobs:
   job_1:
