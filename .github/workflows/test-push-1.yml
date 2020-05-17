@@ -5,7 +5,8 @@ on:
     branches: [ gh-workflow-commit ]
 
 jobs:
-  edit:
+  job_1:
+    name: Edit and push
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -13,13 +14,7 @@ jobs:
     - name: Edit the file
       run: |
         date > wf/date.txt
-
-  commit:
-    name: Commit and push
-    needs: edit
-    runs-on: ubuntu-latest
-    steps:
-    - name: 
+    - name: Commit and push
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Test auto-commit
