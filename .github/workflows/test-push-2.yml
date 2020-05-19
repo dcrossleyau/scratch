@@ -1,9 +1,12 @@
 name: test-push-2
 
 on:
-  schedule:
-    - cron:  '12 13 * * *'
-    - cron:  '12 01 * * *'
+# 2020-05-19: disabled
+#  schedule:
+#    - cron:  '12 13 * * *'
+#    - cron:  '12 01 * * *'
+  push:
+    branches: [ workflows-okay ]
 
 jobs:
   job_1:
