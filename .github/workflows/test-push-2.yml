@@ -1,0 +1,28 @@
+name: test-push-2
+
+on:
+# 2020-05-19: disabled
+#  schedule:
+#    - cron:  '12 13 * * *'
+#    - cron:  '12 01 * * *'
+  push:
+    branches: [ workflows-okay ]
+
+jobs:
+  job_1:
+    name: Edit and push
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: gh-workflow-commit
+    - name: Edit the file
+      run: |
+        date > wf/date.txt
+    - name: Commit and push
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: "Auto: Test auto-commit"
+        file_pattern: wf/date.txt
+
