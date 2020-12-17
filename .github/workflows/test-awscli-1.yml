@@ -1,0 +1,17 @@
+name: test-awscli-1
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Echo version of aws-cli
+      uses: hannut91/aws-cli@v1.18
+      with:
+        args: --version
