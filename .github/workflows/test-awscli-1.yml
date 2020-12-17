@@ -12,6 +12,6 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Echo version of aws-cli
-      uses: actions/aws-cli@v1
+      uses: hannut91/aws-cli@master
       with:
         args: --version
