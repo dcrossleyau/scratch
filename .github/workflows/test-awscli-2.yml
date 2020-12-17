@@ -14,5 +14,6 @@ jobs:
     - uses: keithweaver/aws-s3-github-action@master
       with:
         command: ls
-        source: s3://foliodocs/api/
+        source: api
+        destination: s3://foliodocs/
 
