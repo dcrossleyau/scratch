@@ -1,0 +1,28 @@
+name: test-awscli-1
+
+on:
+# 2020-12-17: disabled
+# The second step fails, needs credentials
+#  push:
+#    branches: [ initial-gh-workflow ]
+  push:
+    branches: [ workflows-broken ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Echo version of aws-cli
+      uses: hannut91/aws-cli@master
+      with:
+        args: --version
+
+    - name: Get directory listing
+      uses: hannut91/aws-cli@master
+      with:
+        args: s3 ls s3://foliodocs/api/
+      env:
+        AWS_DEFAULT_REGION: us-east-1

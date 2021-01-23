@@ -1,0 +1,23 @@
+name: test-awscli-2
+
+on:
+# 2020-12-17: disabled
+# needs credentials, and "source" is not correct
+#  push:
+#    branches: [ initial-gh-workflow ]
+  push:
+    branches: [ workflows-broken ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - uses: keithweaver/aws-s3-github-action@master
+      with:
+        command: ls
+        source: api
+        destination: s3://foliodocs/
+
