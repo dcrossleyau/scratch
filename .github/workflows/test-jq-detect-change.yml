@@ -1,0 +1,20 @@
+name: test-jq-detect-merge.yml
+
+    #branches: [ initial-gh-workflow ]
+on:
+  push:
+    branches: [ workflow-prep ]
+    paths:
+      - 'wf/repos.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Extract repo names
+      uses: awesome-global-contributions/action-yq@v1.0.2
+      with:
+        file: wf/src/extract-repo-names.sh
