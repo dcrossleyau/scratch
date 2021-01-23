@@ -1,8 +1,12 @@
 name: test-awscli-2
 
 on:
+# 2020-12-17: disabled
+# needs credentials, and "source" is not correct
+#  push:
+#    branches: [ initial-gh-workflow ]
   push:
-    branches: [ initial-gh-workflow ]
+    branches: [ workflows-broken ]
 
 jobs:
   build:
