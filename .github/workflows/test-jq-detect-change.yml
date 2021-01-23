@@ -1,9 +1,12 @@
-name: test-jq-detect-merge.yml
+name: test-jq-detect-change.yml
 
-    #branches: [ initial-gh-workflow ]
+# Detect a change to a specific path
+
 on:
+# 2021-01-23: disabled
   push:
-    branches: [ workflow-prep ]
+#    branches: [ initial-gh-workflow ]
+    branches: [ workflows-okay ]
     paths:
       - 'wf/repos.json'
 
