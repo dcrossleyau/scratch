@@ -1,0 +1,19 @@
+name: test-shared-env
+
+# STATUS: testing
+
+on:
+  workflow_run:
+    workflows: [ set-env-tools ]
+    types: [ completed ]
+    branches: [ initial-gh-workflow ]
+
+jobs:
+  test-shared-env:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Verify env
+      run: echo "API_TYPES=$API_TYPES"

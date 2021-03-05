@@ -1,0 +1,19 @@
+name: set-env-tools
+
+# Set shared environment variables for tools configuration.
+
+# STATUS: testing
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+
+jobs:
+  set-env-tools:
+    runs-on: ubuntu-latest
+    env:
+      API_TYPES: "RAML"
+      API_DIRECTORIES: "ramls"
+    steps:
+    - name: Verify env
+      run: echo "API_TYPES=$API_TYPES"
