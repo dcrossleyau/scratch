@@ -1,0 +1,21 @@
+name: test-default-branch
+
+on:
+  push:
+    branches: [ main, master, initial-gh-workflow ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set some vars
+      run: |
+        echo "DEFAULT_BRANCH=${{ github.event.repository.default_branch }}" >> $GITHUB_ENV
+
+    - name: Report some info
+      run: |
+        echo "DEFAULT_BRANCH=${{ env.DEFAULT_BRANCH }}"
+
