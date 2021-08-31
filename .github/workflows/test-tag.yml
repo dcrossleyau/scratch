@@ -1,0 +1,32 @@
+name: test-tag
+
+# if push branch, then tag will be empty
+# if push release tag, then get tag value
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+#    tags: [ '[vV][0-9]+.[0-9]+.[0-9]+*' ]
+    tags: [ 'v[0-9]+.[0-9]+.[0-9]+*' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+      name: Obtain version
+      run: |
+        version=$(echo ${GITHUB_REF#refs/tags/[vV]} | awk -F'.' '{ printf("%d.%d", $1, $2) }')
+        echo "VERSION_MAJ_MIN=${version}" >> $GITHUB_ENV
+
+    - name: Report some info
+      run: |
+        echo "VERSION_MAJ_MIN=${{ env.VERSION_MAJ_MIN }}"
+        if test -n "${{ env.VERSION_MAJ_MIN }}"; then
+          echo "Obtained version."
+        fi
+
