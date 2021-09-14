@@ -23,7 +23,8 @@ jobs:
     - name: Override env if specified
       if: ${{ github.event.inputs.do_fail == 'true' }}
       run: |
-        echo "DO_FAIL='true'" >> $GITHUB_ENV
+        echo "DO_FAIL=true" >> $GITHUB_ENV
+        echo "DO_FAIL=${{ env.DO_FAIL }}"
 
     - name: Show a success result
       if: ${{ env.DO_FAIL == 'false' }}
