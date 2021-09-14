@@ -20,10 +20,15 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Override env if specified
+    - name: Override env true if specified
       if: ${{ github.event.inputs.do_fail == 'true' }}
       run: |
         echo "DO_FAIL=true" >> $GITHUB_ENV
+
+    - name: Override env false if specified
+      if: ${{ github.event.inputs.do_fail == 'false' }}
+      run: |
+        echo "DO_FAIL=false" >> $GITHUB_ENV
 
     - name: Show a success result
       if: ${{ env.DO_FAIL == 'false' }}
