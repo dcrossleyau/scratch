@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Override env if specified
-      if: ${{ github.event.inputs.do_fail == 'false' }}
+      if: ${{ github.event.inputs.do_fail == 'true' }}
       run: |
         echo "DO_FAIL='true'" >> $GITHUB_ENV
 
