@@ -3,6 +3,7 @@ name: test-default-branch
 on:
   push:
     branches: [ main, master, initial-gh-workflow ]
+  pull_request:
 
 jobs:
   build:
