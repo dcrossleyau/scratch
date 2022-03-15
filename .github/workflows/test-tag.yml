@@ -24,8 +24,11 @@ jobs:
 
     - name: Report some info
       run: |
+        echo "GITHUB_REF=${{ env.GITHUB_REF }}"
+        echo "github.REF=${{ github.REF }}"
         echo "VERSION_MAJ_MIN=${{ env.VERSION_MAJ_MIN }}"
         if test -n "${{ env.VERSION_MAJ_MIN }}"; then
           echo "Obtained version."
         fi
+
 
