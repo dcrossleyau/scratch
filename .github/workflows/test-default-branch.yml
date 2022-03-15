@@ -21,5 +21,10 @@ jobs:
         echo "DEFAULT_BRANCH=${{ env.DEFAULT_BRANCH }}"
         echo "GITHUB_REF=$GITHUB_REF"
         echo "github.REF=${{ github.REF }}"
+        echo "github.REF_NAME=${{ github.REF_NAME }}"
+        echo "github.EVENT_NAME=${{ github.EVENT_NAME }}"
 
+    - name: Run if default branch
+      if: ${{ github.REF_NAME == env.DEFAULT_BRANCH }}
+      run: echo "On branch ${{ env.DEFAULT_BRANCH }}"
 
