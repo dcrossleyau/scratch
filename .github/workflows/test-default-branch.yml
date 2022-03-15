@@ -3,6 +3,7 @@ name: test-default-branch
 on:
   push:
     branches: [ main, master, initial-gh-workflow ]
+  pull_request:
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
     - name: Report some info
       run: |
         echo "DEFAULT_BRANCH=${{ env.DEFAULT_BRANCH }}"
-        echo "GITHUB_REF=${{ env.GITHUB_REF }}"
+        echo "GITHUB_REF=$GITHUB_REF"
         echo "github.REF=${{ github.REF }}"
 
 
