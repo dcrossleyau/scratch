@@ -1,0 +1,24 @@
+name: env-reusable-caller
+
+# Use shared environment variables.
+
+# STATUS: testing
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+  workflow_dispatch:
+
+jobs:
+  use-env:
+    name: Use environment from called WF
+    uses: ./.github/workflows/env-reusable-called.yml
+  show-env-caller:
+#   env:
+#     ENV_2: 'gee'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Report caller env
+      run: |
+        echo "env-reusable-caller: ENV_1=${{ env.ENV_1 }}"
+        echo "env-reusable-caller: ENV_2=${{ env.ENV_2 }}"
