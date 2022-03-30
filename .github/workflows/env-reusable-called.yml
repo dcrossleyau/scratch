@@ -1,0 +1,23 @@
+name: env-reusable-called
+
+# Set shared environment variables.
+
+# STATUS: testing
+
+on:
+  workflow_call:
+
+jobs:
+  set-env:
+    runs-on: ubuntu-latest
+    env:
+      ENV_1: 'foo'
+      ENV_2: 'bar'
+    steps:
+    - name: Set called env
+      run: |
+        echo "ENV_1=$ENV_1" >> $GITHUB_ENV
+    - name: Report called env
+      run: |
+        echo "env-reusable-called: ENV_1=${{ env.ENV_1 }}"
+        echo "env-reusable-called: ENV_2=${{ env.ENV_2 }}"
