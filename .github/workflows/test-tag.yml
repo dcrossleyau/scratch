@@ -6,7 +6,7 @@ name: test-tag
 on:
   push:
     branches: [ initial-gh-workflow ]
-    tags: [ '[vV][0-9]+.[0-9]+.[0-9]+*' ]
+    tags: [ '[vV][0-9]+.[0-9]+.[0-9]+' ]
   workflow_dispatch:
 
 jobs:
