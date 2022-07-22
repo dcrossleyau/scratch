@@ -18,7 +18,7 @@ jobs:
       run: brew install jd
 
     - name: Show PATH
-      run: echo "GITHUB_PATH=$GITHUB_PATH"
+      run: echo "PATH=$PATH"
 
     - name: Show which jd
       run: which jd
