@@ -1,0 +1,29 @@
+name: replace-env
+
+# MESSAGE: string; The message to be displayed:
+#  'example message'
+# DO_MESSAGE: boolean: Whether to show the message
+
+env:
+#  MESSAGE: -- replace: see notes above --
+  MESSAGE: 'This MESSAGE'
+  DO_MESSAGE: true
+
+on:
+  push:
+    branches: [ master, main ]
+
+jobs:
+  basic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.REF }}
+          submodules: recursive
+      - name: Report some info
+        if: ${{ env.DO_MESSAGE == 'true' }}
+        run: |
+          echo "MESSAGE=${{ env.MESSAGE }}"
+
