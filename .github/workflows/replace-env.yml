@@ -5,9 +5,8 @@ name: replace-env
 # DO_MESSAGE: boolean: Whether to show the message
 
 env:
-#  MESSAGE: -- replace: see notes above --
-  MESSAGE: 'This MESSAGE'
-  DO_MESSAGE: false
+  MESSAGE: -- replace: see notes above --
+  DO_MESSAGE: true
 
 on:
   push:
