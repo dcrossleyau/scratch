@@ -7,7 +7,7 @@ name: replace-env
 env:
 #  MESSAGE: -- replace: see notes above --
   MESSAGE: 'This MESSAGE'
-  DO_MESSAGE: true
+  DO_MESSAGE: false
 
 on:
   push:
