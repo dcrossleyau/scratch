@@ -19,7 +19,14 @@ jobs:
       run: go version
 
     - name: Install jd
-      run: go install github.com/josephburnett/jd@latest
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        go install github.com/josephburnett/jd@latest
 
     - name: Show jd version
       run: jd --version
+
+    - name: Show jd version
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        jd --version
