@@ -12,6 +12,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
+    - name: Set linuxbrew path
+      run: eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    - name: Show PATH
+      run: echo "PATH=$PATH"
+
     - name: Install a homebrew package
       run: brew install jd
 
