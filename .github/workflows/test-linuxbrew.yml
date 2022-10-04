@@ -1,8 +1,8 @@
 name: test-linuxbrew
 
 on:
- push:
-   branches: [ initial-gh-workflow ]
+  push:
+    branches: [ initial-gh-workflow ]
   workflow_dispatch:
 
 jobs:
