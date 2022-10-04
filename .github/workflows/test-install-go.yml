@@ -24,9 +24,9 @@ jobs:
         go install github.com/josephburnett/jd@latest
 
     - name: Show jd version
-      run: jd --version
-
-    - name: Show jd version
       run: |
         export PATH=$PATH:$(go env GOPATH)/bin
         jd --version
+
+    - name: Show jd version
+      run: jd --version
