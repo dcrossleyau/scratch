@@ -1,0 +1,19 @@
+name: test-install-go
+
+on:
+  push:
+    branches: [ initial-gh-workflow ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup Go
+      uses: actions/setup-go@v3
+
+    - name: Show Go version
+      run: go version
