@@ -19,8 +19,7 @@ jobs:
       run: go version
 
     - name: Install jd
-      run:
-        go install github.com/josephburnett/jd@latest
+      run: go install github.com/josephburnett/jd@latest
 
     - name: Show jd version
       run: |
