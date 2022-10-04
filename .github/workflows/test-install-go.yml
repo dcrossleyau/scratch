@@ -21,7 +21,5 @@ jobs:
     - name: Install jd
       run: go install github.com/josephburnett/jd@latest
 
-    - name: Show which jd
-      run: |
-        which jd
-        jd --version
+    - name: Show jd version
+      run: jd --version
