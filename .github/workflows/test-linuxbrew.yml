@@ -1,11 +1,9 @@
 name: test-linuxbrew
 
 on:
-# 2022-07-22: disabled
-# push:
-#   branches: [ initial-gh-workflow ]
-  push:
-    branches: [ workflows-okay ]
+ push:
+   branches: [ initial-gh-workflow ]
+  workflow_dispatch:
 
 jobs:
   build:
