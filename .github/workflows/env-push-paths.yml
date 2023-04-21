@@ -6,6 +6,8 @@ env:
 on:
   push:
     branches: [ master, initial-gh-workflow ]
+    paths:
+      - 'wf/**'
 
 jobs:
   basic:
