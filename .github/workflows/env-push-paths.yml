@@ -7,9 +7,9 @@ on:
   push:
     branches: [ master, initial-gh-workflow ]
     paths:
-#      - 'wf/**'
+      - 'wf/**'
 #      - "${{ env.API_DIRECTORIES }}/**"
-      - "$API_DIRECTORIES/**"
+#      - "$API_DIRECTORIES/**"
 
 jobs:
   basic:
