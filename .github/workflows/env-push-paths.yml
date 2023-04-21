@@ -1,0 +1,26 @@
+name: env-push-paths
+
+env:
+  API_DIRECTORIES: 'wf'
+
+on:
+  push:
+    branches: [ master, initial-gh-workflow ]
+    paths:
+      - 'wf/**'
+#      - "${{ env.API_DIRECTORIES }}/**"
+#      - "$API_DIRECTORIES/**"
+
+jobs:
+  basic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.REF }}
+          submodules: recursive
+      - name: Report some info
+        run: |
+          echo "API_DIRECTORIES=${{ env.API_DIRECTORIES }}"
+
