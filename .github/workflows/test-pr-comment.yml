@@ -2,7 +2,7 @@ name: test-pr-comment
 
 env:
   MESSAGE: 'example message'
-  DO_MESSAGE: false
+  DO_MESSAGE: true
 
 on: [push, pull_request]
 
