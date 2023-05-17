@@ -4,4 +4,4 @@
 Temporary.
 </div>
 
-<p><span style="border-style: solid; border-color: blue; border-width: 2px;">Foo</span</p>
+<p><span style="border-style: solid; border-color: blue; border-width: 2px;">Foo</span></p>
